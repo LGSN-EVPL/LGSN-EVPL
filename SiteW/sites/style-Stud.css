@@ -1,0 +1,117 @@
+:root {
+	--Colp1: #87A220;
+	--Colp1hov: #7b931c;
+	--ColS2: #192421;
+	--ColBack: #000000ae;
+	--ColShad1: #FFF;
+	--ColShad2: #000;
+	--ColShad3: #002395;
+	--ColShad4: #ffffff49;
+	--Text1: #87a220;
+	--Text2: #000;
+	--Text3: #FFF;
+}
+
+
+body {
+   background-image: url(../PIC/Reproducteur/IMG-20250820-WA0016.jpg);
+   background-size: 100%;
+   background-position-y: -425px;
+   background-repeat: no-repeat;
+}
+
+.carousels{
+
+		/* note - it will "break" if it gets too wide and there aren't enough items */
+		--carousel-item-width: 300px;
+		--carousel-item-height: 400px;
+		--clr-cta: rgb(0, 132, 209);
+
+		position: relative;
+		width: var(--carousel-width);
+		height: var(--carousel-item-height);
+		overflow: clip;
+}
+
+.carousels>article {
+
+   display: flex;
+   left: calc(100% + var(--carousels-item-gap));
+   width: var(--carousels-item-width);
+   height: var(--carousels-item-height);
+   display: grid;
+   grid-template-rows: 200px auto 1fr auto;
+
+   border: 1px solid light-dark(rgba(0, 0, 0, 0.25), var(--ColShad2));
+   border-radius: 10px;
+   background: light-dark(white, rgba(255 255 255 / 0.05));
+   color: light-dark(rgb(0, 106, 255), white);
+
+}
+.carousels article{
+   width: 18em;
+   
+}
+.carousels{
+   gap:1em
+}
+
+.carousels img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   border-radius: 10px 10px 0 0;
+}
+
+.carousels>article>*:not(img) {
+   padding: 0 1rem;
+}
+
+.carousels>article>div {
+   grid-row: span 2;
+   display: grid;
+   grid-template-rows: subgrid;
+   font-size: 0.8rem;
+}
+
+.carousels>article h2 {
+   font-size: 1.2rem;
+   font-weight: 300;
+   padding-block: 0.75rem 0.25rem;
+   margin: 0;
+}
+
+.carousels>article p {
+   margin: 0;
+}
+
+.carousels>article a {
+   text-decoration: none;
+   text-transform: lowercase;
+   border: 1px solid var(--clr-cta);
+   color: light-dark(var(--clr-cta), white);
+   border-radius: 3px;
+   padding: 0.25rem 0.5rem;
+   place-self: start;
+   transition: 150ms ease-in-out;
+}
+
+@layer base {
+   * {
+      box-sizing: border-box;
+   }
+
+   main section {
+      min-height: 70svh;
+      margin: 0;
+      padding: 1rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      display: grid;
+      place-items: center;
+
+   }
+   main .carousels{
+      display: flex;
+   }
+}

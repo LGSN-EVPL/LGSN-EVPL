@@ -1,0 +1,662 @@
+:root {
+	--Colp1: #87A220;
+	--Colp1hov: #7b931c;
+	--ColS2: #192421;
+	--ColBack: #000000ae;
+	--ColShad1: #FFF;
+	--ColShad2: #000;
+	--ColShad3: #002395;
+	--ColShad4: #ffffff49;
+	--Text1: #87a220;
+	--Text2: #000;
+	--Text3: #FFF;
+}
+
+/*###################################################
+#                                                   #
+#                      Polices                      #
+#                                                   #
+###################################################*/
+
+@font-face {
+	font-family: 'Ubuntu';
+	src: url('fonts/ubuntu.woff2') format('woff2'),
+		url('fonts/ubuntu.woff') format('woff');
+	font-weight: medium;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('fonts/Poppins-Bold.woff2') format('woff2'),
+		url('fonts/Poppins-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('fonts/Poppins-Light.woff2') format('woff2'),
+		url('fonts/Poppins-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('fonts/Poppins-Italic.woff2') format('woff2'),
+		url('fonts/Poppins-Italic.woff') format('woff');
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('fonts/Poppins-Medium.woff2') format('woff2'),
+		url('fonts/Poppins-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('fonts/Poppins-Regular.woff2') format('woff2'),
+		url('fonts/Poppins-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('fonts/Poppins-Thin.woff2') format('woff2'),
+		url('fonts/Poppins-Thin.woff') format('woff');
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('fonts/Poppins-SemiBold.woff2') format('woff2'),
+		url('Poppins-SemiBold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+body {
+	font-family: "Poppins", "Ubuntu", sans-serif;
+	background-color: var(--Colp1);
+	margin: 0;
+}
+
+/*###################################################
+#                                                   #
+#                      Body                         #
+#                                                   #
+###################################################*/
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Poppins';
+	text-align: justify;
+	color: var(--text);
+	margin: 0;
+	word-break: break-word;
+
+}
+
+/*Backl*/
+body {
+	background-image: url(../PIC/Kittens/background.jpg);
+	background-size: 100%;
+	background-position-y: -225px;
+	background-repeat: no-repeat;
+}
+
+/*###################################################
+#                                                   #
+#                      Header                       #
+#                                                   #
+###################################################*/
+
+header {
+	top: 0;
+	width: 100%;
+	height: 110px;
+	position: fixed;
+	margin-top: 0;
+	display: flex;
+	background-color: var(--ColBack);
+	color: #87A220;
+	align-items: center;
+	justify-content: center;
+	z-index: 1002;
+}
+
+header a {
+	color: var(--Text3);
+	text-decoration: none;
+}
+
+/*###################################################
+#                      menu-burger                  #
+###################################################*/
+
+#menu-toggle {
+	display: none;
+}
+
+.menu-btn {
+
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	width: 35px;
+	height: 30px;
+	cursor: pointer;
+	z-index: 1001;
+}
+
+.menu-btn span {
+	display: block;
+	height: 4px;
+	background: var(--Colp1);
+	box-shadow: var(--ColShad4) 2px 2px 1px;
+	margin: 6px 0;
+	border-radius: 2px;
+	transition: 0.3s;
+}
+
+/*###################################################
+#                      Animation                    #
+###################################################*/
+
+#menu-toggle:checked+.menu-btn span:nth-child(1) {
+	transform: rotate(45deg) translate(6px, 6px);
+}
+
+#menu-toggle:checked+.menu-btn span:nth-child(2) {
+	opacity: 0;
+}
+
+#menu-toggle:checked+.menu-btn span:nth-child(3) {
+	transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/*###################################################
+#                     menu                          #
+###################################################*/
+
+.menu {
+	position: fixed;
+	top: 0;
+	right: -100%;
+	width: 200px;
+	height: 100%;
+	background: var(--ColBack);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	transition: right 0.3s ease;
+	z-index: 1000;
+	color: var(--Text1);
+	text-shadow: var(--ColShad1) 1px 1px 1px;
+}
+
+#menu-toggle:checked~.menu {
+	right: 0;
+}
+
+.menu a {
+	margin-top: 25%;
+	color: var(--Text1);
+	text-decoration: none;
+	font-size: 24px;
+	transition: color 0.2s;
+}
+
+.menu a:hover {
+	color: var(--Text3);
+}
+
+.menu-principale {
+	width: 100%;
+}
+
+.menu-button {
+
+	background: var(--Colp1);
+	border-radius: 15px;
+	height: 40px;
+	width: 250px;
+	margin-right: 50px;
+	border: none;
+	box-shadow: var(--ColShad4) 3px 3px 1px;
+	font-size: 20px;
+	color: var(--Text3);
+	text-shadow: var(--ColS2) 2px 1px 1px;
+}
+
+.menu-button:hover {
+	background-color: var(--Colp1hov);
+}
+
+/*###################################################
+#                                                   #
+#                      Main                         #
+#                                                   #
+###################################################*/
+
+@layer base,
+demo;
+
+@layer demo {
+	.carousel {
+		--items: 6;
+		--carousel-duration: 40s;
+
+		@media (width > 600px) {
+			--carousel-duration: 20s;
+		}
+
+		--carousel-width: min(80vw,
+			1200px);
+		/* note - it will "break" if it gets too wide and there aren't enough items */
+		--carousel-item-width: 300px;
+		--carousel-item-height: 400px;
+		--carousel-item-gap: 2rem;
+
+		--clr-cta: rgb(0, 132, 209);
+
+		position: relative;
+		width: var(--carousel-width);
+		height: var(--carousel-item-height);
+		overflow: clip;
+
+
+		&[mask] {
+			/* fade out on sides */
+			mask-image: linear-gradient(to right,
+					transparent,
+					black 10% 90%,
+					transparent);
+		}
+
+		&[reverse]>article {
+			animation-direction: reverse;
+		}
+
+		/* hover pauses animation */
+		&:hover>article {
+			animation-play-state: paused;
+		}
+
+		.gp-car-1-art-1:hover,
+		.gp-car-1-art-2:hover,
+		.gp-car-1-art-3:hover,
+		.gp-car-1-art-4:hover,
+		.gp-car-1-art-5:hover,
+		.gp-car-1-art-6:hover {
+			background: var(--Colp1);
+			color: var(--ColBack);
+			transform: scale(1.03);
+
+		}
+
+
+		.gp-car-2-art-1:hover,
+		.gp-car-2-art-2:hover,
+		.gp-car-2-art-3:hover,
+		.gp-car-2-art-4:hover,
+		.gp-car-2-art-5:hover,
+		.gp-car-2-art-6:hover {
+			background: var(--ColS2);
+			color: var(--Text1);
+			transform: scale(1.03);
+
+		}
+	}
+
+	.carousel>article {
+
+		position: absolute;
+		top: 0;
+		left: calc(100% + var(--carousel-item-gap));
+		width: var(--carousel-item-width);
+		height: var(--carousel-item-height);
+		display: grid;
+		grid-template-rows: 200px auto 1fr auto;
+		gap: 0.25rem;
+		border: 1px solid light-dark(rgba(0 0 0 / 0.25), rgba(255 255 255 / 0.15));
+
+		padding-block-end: 1rem;
+		border-radius: 10px;
+		background: light-dark(white, rgba(255 255 255 / 0.05));
+		color: light-dark(rgb(0, 106, 255), white);
+
+
+
+		/* animation */
+		will-change: transform;
+		animation-name: marquee;
+		animation-duration: var(--carousel-duration);
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+		animation-delay: calc(var(--carousel-duration) / var(--items) * 1 * var(--i) * -1);
+
+		&:nth-child(1) {
+			--i: 0;
+		}
+
+		&:nth-child(2) {
+			--i: 1;
+		}
+
+		&:nth-child(3) {
+			--i: 2;
+		}
+
+		&:nth-child(4) {
+			--i: 3;
+		}
+
+		&:nth-child(5) {
+			--i: 4;
+		}
+
+		&:nth-child(6) {
+			--i: 5;
+		}
+
+		&:nth-child(7) {
+			--i: 6;
+		}
+
+		&:nth-child(8) {
+			--i: 7;
+		}
+
+		&:nth-child(9) {
+			--i: 8;
+		}
+
+		&:nth-child(10) {
+			--i: 9;
+		}
+	}
+
+	.carousel img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+
+		border-radius: 10px 10px 0 0;
+	}
+
+	.gp-art-4-pic {
+		top: -150px;
+	}
+
+	.carousel>article>*:not(img) {
+		padding: 0 1rem;
+	}
+
+	.carousel>article>div {
+		grid-row: span 2;
+		display: grid;
+		grid-template-rows: subgrid;
+		font-size: 0.8rem;
+	}
+
+	.carousel>article h2 {
+		font-size: 1.2rem;
+		font-weight: 300;
+		padding-block: 0.75rem 0.25rem;
+		margin: 0;
+	}
+
+	.carousel>article p {
+		margin: 0;
+	}
+
+	.carousel>article a {
+		text-decoration: none;
+		text-transform: lowercase;
+		border: 1px solid var(--clr-cta);
+		color: light-dark(var(--clr-cta), white);
+		border-radius: 3px;
+		padding: 0.25rem 0.5rem;
+		place-self: start;
+		transition: 150ms ease-in-out;
+
+		&:hover,
+		&:focus-visible {
+			background-color: var(--clr-cta);
+			color: white;
+			outline: none;
+		}
+	}
+
+	@keyframes marquee {
+		100% {
+			transform: translateX(calc((var(--items) * (var(--carousel-item-width) + var(--carousel-item-gap))) * -1));
+		}
+	}
+}
+
+/* general styling */
+@layer base {
+	* {
+		box-sizing: border-box;
+	}
+
+	:root {
+		color-scheme: light dark;
+
+		--bg-dark: rgb(2, 6, 24);
+		--bg-light: rgb(229, 229, 229);
+		--txt-light: rgb(10, 10, 10);
+		--txt-dark: rgb(245, 245, 245);
+	}
+
+	main section {
+		min-height: 70svh;
+		margin: 0;
+		padding: 1rem;
+		font-size: 1rem;
+		line-height: 1.5;
+		display: grid;
+		place-items: center;
+		gap: 2rem;
+	}
+}
+
+/*###################################################
+#                     TEXT                          #
+###################################################*/
+
+
+.gp-car-1 {
+	height: 250px;
+	margin-top: 49%;
+	background-color: var(--ColS2);
+}
+
+.gp-txt {
+	min-height: 60svh;
+	height: 350px;
+	background-color: var(--ColS2);
+}
+
+.txt-acc {
+	width: 80%;
+	font-size: large;
+	text-align: center;
+}
+
+/*###################################################
+#                     Reservation                   #
+###################################################*/
+
+.section-info {
+	margin-top: 5%;
+	background-color: var(--ColS2);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.button-info,
+.button-info a {
+
+	width: 200px;
+	text-decoration: none;
+	color: var(--Text3);
+}
+
+.div-info {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+}
+
+
+/*###################################################
+#                                                   #
+#                      Footer                       #
+#                                                   #
+###################################################*/
+
+.footer {
+	background: #0f0f0f;
+	color: #fff;
+	padding: 2rem 1rem;
+	bottom: 0;
+}
+
+.footer-col {
+	padding: 10px;
+	height: 200px;
+}
+
+.footer-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	align-items: center;
+	gap: 2rem;
+	max-width: 1200px;
+	margin: auto;
+}
+
+.footer-col a {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	color: var(--Text3);
+	text-decoration: none;
+	margin-bottom: 10px;
+}
+
+.footer-col a:hover {
+	color: var(--Text1);
+}
+
+.social {
+	background-color: var(--ColS2);
+	border-radius: 15px;
+}
+
+.contact {
+	background-color: var(--ColS2);
+	border-radius: 15px;
+}
+
+.contact .btn {
+	display: inline-block;
+	margin-top: 1rem;
+	padding: 0.5rem 1rem;
+	background: var(--Colp1);
+	color: var(--Text3);
+	border-radius: 6px;
+	text-decoration: none;
+}
+
+.contact .btn:hover {
+	background: var(--ColS2);
+}
+
+.logo img {
+	max-width: 150px;
+	border-radius: 50%;
+}
+
+
+
+
+
+
+/*###################################################
+#                                                   #
+#                      RESPONSIVE                   #
+#                                                   #
+###################################################*/
+
+
+
+
+
+@media (max-width:1024px) {
+
+
+
+	.menu-button {
+
+		background: var(--Colp1);
+		border-radius: 15px;
+		height: 25px;
+		width: 150px;
+		margin-right: 25px;
+		font-size: 12px;	
+	}
+
+	.menu-button:focus {
+		background-color: var(--Colp1hov);
+	}
+	header > figcaption > figure img{
+		height: 70px;
+		width: 70px;
+	}
+}
+@media (max-width: 820px){
+
+	header{
+		height: 80px;
+	}
+
+	.menu-button {
+
+		background: var(--Colp1);
+		border-radius: 15px;
+		height: 25px;
+		width: 150px;
+		margin-right: 20px;
+		font-size: 12px;	
+	}
+	
+
+
+	body {
+		background-size: 100%;
+		background-repeat: no-repeat;
+}
+}

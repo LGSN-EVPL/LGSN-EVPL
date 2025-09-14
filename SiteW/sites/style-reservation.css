@@ -1,0 +1,10 @@
+body {
+   background-image: url(../PIC/Reproducteur/IMG-20250830-WA0018.jpg);
+   background-size: 100%;
+   background-position-y: -200px;
+   background-repeat: no-repeat;
+}
+
+.back-pic{
+    min-height: 80svh;
+}
