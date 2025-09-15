@@ -675,11 +675,60 @@ demo;
 		flex-wrap: wrap;
 	}
 
-	.footer{
+	.footer {
 		min-height: 30svh;
 	}
-	.footer-col{
+
+	.footer-col {
 		min-height: 20svh;
 	}
 
+}
+
+
+@media (max-width: 480px) {
+
+	footer {
+		display: none;
+	}
+
+	header {
+		height: 80px;
+		background-color: #00000000;
+	}
+
+	header img {
+		margin-left: -30px;
+		margin-top: 15px;
+		height: 64px;
+		width: 64px;
+	}
+
+	.menu-button {
+		display: none;
+	}
+
+	main section {
+		min-height: 60svh;
+	}
+
+	@layer demo {
+
+
+		.carousel {
+			--items: 6;
+			--carousel-duration: 15s;
+
+			@media (width > 600px) {
+				--carousel-duration: 20s;
+			}
+
+			--carousel-width: min(400vw,
+				800px);
+			/* note - it will "break" if it gets too wide and there aren't enough items */
+			--carousel-item-width: 150px;
+			--carousel-item-height: 350px;
+			--carousel-item-gap: 1rem;
+		}
+	}
 }
