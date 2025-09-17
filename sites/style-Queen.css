@@ -225,3 +225,21 @@ demo;
 		gap: 2rem;
 	}
 }
+
+@media (max-width: 480px) {
+@layer demo {
+
+		.carousel {
+			--items: 5;
+			--carousel-duration: 15s;
+
+			@media (width > 600px) {
+				--carousel-duration: 20s;
+			}
+
+			--carousel-item-width: 150px;
+			--carousel-item-height: 350px;
+			--carousel-item-gap: 1rem;
+		}
+	}
+}
