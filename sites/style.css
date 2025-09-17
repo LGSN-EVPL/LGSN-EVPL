@@ -154,6 +154,9 @@ header a {
 #menu-toggle {
 	display: none;
 }
+.menu-tel{
+	display: ;
+}
 
 .menu-btn {
 
@@ -688,13 +691,22 @@ demo;
 
 @media (max-width: 480px) {
 
-	footer {
-		display: none;
+	body {
+		background-size: 100%;
+		background-position-y: -50px;
+		background-repeat: no-repeat;
 	}
 
 	header {
-		height: 80px;
 		background-color: #00000000;
+	}
+
+	#menu-toggle {
+		display: none;
+	}
+
+	.menu-bt-tel {
+		background-color: none;
 	}
 
 	header img {
@@ -714,7 +726,6 @@ demo;
 
 	@layer demo {
 
-
 		.carousel {
 			--items: 6;
 			--carousel-duration: 15s;
@@ -723,12 +734,38 @@ demo;
 				--carousel-duration: 20s;
 			}
 
-			--carousel-width: min(400vw,
-				800px);
-			/* note - it will "break" if it gets too wide and there aren't enough items */
 			--carousel-item-width: 150px;
 			--carousel-item-height: 350px;
 			--carousel-item-gap: 1rem;
 		}
 	}
+
+	/*TEXT*/
+	section .txt-acc {
+		font-size: 15px;
+	}
+
+	.gp-txt {
+		min-height: 80svh;
+	}
+
+	.contact-menu{
+		display: none;
+	}
+	/*FOOTER TEL*/
+	.footer {
+		background: #0f0f0f;
+		color: #fff;
+		padding: 2rem 1rem;
+		bottom: 0;
+		height: 750px;
+	}
+
+	.footer-container {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		margin: auto;
+	}
+
 }
