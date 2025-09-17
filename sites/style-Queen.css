@@ -222,7 +222,7 @@ demo;
 
 		.carousel {
 			--items: 5;
-			--carousel-duration: 15s;
+			--carousel-duration: 20s;
 
 			@media (width > 600px) {
 				--carousel-duration: 20s;
