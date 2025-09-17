@@ -242,4 +242,7 @@ demo;
 			--carousel-item-gap: 1rem;
 		}
 	}
+	div,p{
+      text-align: start;
+   }
 }
