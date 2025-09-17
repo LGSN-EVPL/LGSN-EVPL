@@ -205,15 +205,6 @@ demo;
 		box-sizing: border-box;
 	}
 
-	:root {
-		color-scheme: light dark;
-
-		--bg-dark: rgb(2, 6, 24);
-		--bg-light: rgb(229, 229, 229);
-		--txt-light: rgb(10, 10, 10);
-		--txt-dark: rgb(245, 245, 245);
-	}
-
 	main section {
 		min-height: 70svh;
 		margin: 0;
