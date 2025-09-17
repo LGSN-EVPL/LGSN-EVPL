@@ -11,6 +11,9 @@
 	--Text2: #000;
 	--Text3: #FFF;
 }
+html {
+  color-scheme: dark; /* or dark — but pick one */
+}
 
 /*###################################################
 #                                                   #
