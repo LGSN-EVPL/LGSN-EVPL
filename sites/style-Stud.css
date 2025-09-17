@@ -118,7 +118,7 @@ body {
 @media (max-width: 480px) {
 
    main section {
-		min-height: 165svh;
+		min-height: 175svh;
 	}
 
    .carousels{
