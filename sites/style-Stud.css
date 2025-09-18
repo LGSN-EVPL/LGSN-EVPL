@@ -118,13 +118,13 @@ body {
 @media (max-width: 480px) {
 
    main section {
-		min-height: 175svh;
+		min-height: 185svh;
 	}
 
    .carousels{
       display: flex;
       flex-direction: column;
-      height: 175svh;
+      height: 180svh;
    }
    .gp-car-1-art{
       width: 200px;
