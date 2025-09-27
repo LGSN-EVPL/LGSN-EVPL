@@ -11,8 +11,10 @@
 	--Text2: #000;
 	--Text3: #FFF;
 }
+
 html {
-  color-scheme: dark; /* or dark — but pick one */
+	color-scheme: dark;
+	/* or dark — but pick one */
 }
 
 /*###################################################
@@ -157,7 +159,8 @@ header a {
 #menu-toggle {
 	display: none;
 }
-.menu-tel{
+
+.menu-tel {
 	display: ;
 }
 
@@ -343,7 +346,7 @@ demo;
 		display: grid;
 		grid-template-rows: 200px auto 1fr auto;
 		gap: 0.25rem;
-		border: 1px solid light-dark(rgba(0 ,0 ,0 , 0.25), rgba(255, 255, 255, 0.15));
+		border: 1px solid light-dark(rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.15));
 
 		padding-block-end: 1rem;
 		border-radius: 10px;
@@ -548,11 +551,12 @@ demo;
 	color: #fff;
 	padding: 2rem 1rem;
 	bottom: 0;
+	height: auto;
 }
 
 .footer-col {
 	padding: 10px;
-	height: 200px;
+	height: 250px;
 }
 
 .footer-container {
@@ -752,16 +756,17 @@ demo;
 		min-height: 85svh;
 	}
 
-	.contact-menu{
+	.contact-menu {
 		display: none;
 	}
+
 	/*FOOTER TEL*/
 	.footer {
 		background: #0f0f0f;
 		color: #fff;
 		padding: 2rem 1rem;
 		bottom: 0;
-		height: 750px;
+		height: auto;
 	}
 
 	.footer-container {
